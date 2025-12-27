@@ -1,8 +1,8 @@
 -- Tabs
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set expandtab") -- modifying the following settings for tabs to use spaces...
+vim.cmd("set tabstop=8") -- 4
+vim.cmd("set softtabstop=0") -- 4
+vim.cmd("set shiftwidth=4 smarttab") -- no smarttab
 vim.opt.list = false
 
 -- Line numbers
@@ -32,6 +32,10 @@ vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
+-- Navigate by visual lines instead.
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
 -- Toggle neovim terminal's normal mode
 vim.keymap.set("t", "<leader><esc>", "<C-\\><C-n>", { desc = "Terminal to Normal mode." })
 
@@ -45,8 +49,11 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
 -- Golang snippets
 -- log error
 vim.keymap.set("n", "<leader>le", "oif err != nil {<CR>log.Fatal(err)<CR>}<ESC>")
--- test print
-vim.keymap.set("n", "<leader>tp", 'ofmt.Printf("  ==> VAL = %+v\\n", VAL) // TEST:<ESC>')
+
+-- Print debugging
+--vim.keymap.set("n", "<leader>tp", 'ofmt.Printf("[DEBUG] VAL = %+v\\n", VAL)<ESC>')
+vim.keymap.set("n", "<leader>tp", '"adiwi\tfmt.Printf("[DEBUG] VAL = %+v\\n", <ESC>"apa)<ESC>?VAL<CR>diw"apa <ESC>F]')
+vim.keymap.set("v", "<leader>tp", '"adi\tfmt.Printf("[DEBUG] VAL = %+v\\n", <ESC>"apa)<ESC>?VAL<CR>diw"apa <ESC>F]')
 
 -- Highlight when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {

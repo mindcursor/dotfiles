@@ -4,6 +4,7 @@ return {
 	---@type oil.SetupOpts
 	opts = {
 		columns = {
+			"icon",
 			"permissions",
 			"size",
 			"mtime",
@@ -12,6 +13,7 @@ return {
 			show_hidden = true,
 		},
 		delete_to_trash = true,
+		watch_for_changes = true,
 	},
 	-- Optional dependencies
 	dependencies = { { "echasnovski/mini.icons", opts = {} } },
