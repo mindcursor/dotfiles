@@ -9,7 +9,7 @@ return {
 	config = function()
 		vim.keymap.set("n", "<leader>n", ":Neotree git_status reveal left<CR>", {})
 		require("neo-tree").setup({
-			window = { width = 40 },
+			window = { width = 30 },
 			opts = {
 				filesystem = {
 					follow_current_file = {

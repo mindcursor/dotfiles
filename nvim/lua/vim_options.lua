@@ -1,8 +1,9 @@
 -- Tabs
-vim.cmd("set expandtab") -- modifying the following settings for tabs to use spaces...
+vim.cmd("set expandtab") -- modifying the following settings for tabs to use spaces, noting changes:
 vim.cmd("set tabstop=8") -- 4
 vim.cmd("set softtabstop=0") -- 4
 vim.cmd("set shiftwidth=4 smarttab") -- no smarttab
+
 vim.opt.list = false
 
 -- Line numbers
