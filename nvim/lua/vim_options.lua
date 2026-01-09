@@ -6,6 +6,9 @@ vim.cmd("set shiftwidth=4 smarttab") -- no smarttab
 
 vim.opt.list = false
 
+-- Borders
+vim.o.winborder = "rounded"
+
 -- Line numbers
 vim.opt.number = true
 vim.cmd("set relativenumber")
@@ -48,11 +51,7 @@ vim.keymap.set("t", "<leader><esc>", "<C-\\><C-n>", { desc = "Terminal to Normal
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
 
 -- Golang snippets
--- log error
 vim.keymap.set("n", "<leader>le", "oif err != nil {<CR>log.Fatal(err)<CR>}<ESC>")
-
--- Print debugging
---vim.keymap.set("n", "<leader>tp", 'ofmt.Printf("[DEBUG] VAL = %+v\\n", VAL)<ESC>')
 vim.keymap.set("n", "<leader>tp", '"adiwi\tfmt.Printf("[DEBUG] VAL = %+v\\n", <ESC>"apa)<ESC>?VAL<CR>diw"apa <ESC>F]')
 vim.keymap.set("v", "<leader>tp", '"adi\tfmt.Printf("[DEBUG] VAL = %+v\\n", <ESC>"apa)<ESC>?VAL<CR>diw"apa <ESC>F]')
 
@@ -68,7 +67,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Stolen from kickstart.nvim:
 --
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -108,7 +107,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "   ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
