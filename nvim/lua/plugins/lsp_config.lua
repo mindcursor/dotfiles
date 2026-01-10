@@ -23,6 +23,7 @@ return {
 					"pyright",
 					"taplo", -- toml
 					"ts_ls", -- typescript
+					"cland", -- C, C++
 				},
 			})
 		end,
@@ -53,17 +54,17 @@ return {
 					},
 				},
 			})
+			lspconfig.clangd.setup({})
 
 			-- Cool LSP based actions
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "gI", vim.lsp.buf.implementation, {}) -- Jump to the implementation of the word under your cursor.
 			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, {}) -- Jump to the type of the word under your cursor.
 			vim.keymap.set("n", "<leader>ds", vim.lsp.buf.document_symbol, {}) -- Fuzzy find all the symbols in your current document.
 			--  Symbols are things like variables, functions, types, etc.
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {}) -- Rename the variable under your cursor.
+			-- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {}) -- Rename the variable under your cursor. Same as grn.
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {}) -- Execute a code action, usually your cursor needs to be on top
 			-- of an error or a suggestion from your LSP for this to active.
 		end,
