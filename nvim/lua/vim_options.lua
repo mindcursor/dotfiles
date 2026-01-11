@@ -12,6 +12,7 @@ vim.o.winborder = "rounded"
 -- Line numbers
 vim.opt.number = true
 vim.cmd("set relativenumber")
+vim.opt.numberwidth = 20 -- widen the gutter
 
 -- Cursor style
 vim.opt.guicursor = "n-v-c-i:block"

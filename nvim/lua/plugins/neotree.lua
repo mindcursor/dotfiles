@@ -7,7 +7,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>n", ":Neotree git_status reveal left<CR>", {})
+		vim.keymap.set("n", "<leader>n", ":Neotree buffers reveal left<CR>", {})
 		require("neo-tree").setup({
 			window = { width = 30 },
 			opts = {
