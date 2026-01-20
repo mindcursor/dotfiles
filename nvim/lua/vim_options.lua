@@ -1,18 +1,23 @@
+-- General configuration.
+
 -- Tabs
-vim.cmd("set expandtab") -- modifying the following settings for tabs to use spaces, noting changes:
-vim.cmd("set tabstop=4") -- 4
-vim.cmd("set softtabstop=0") -- 4
-vim.cmd("set shiftwidth=4 smarttab") -- no smarttab
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=0")
+vim.cmd("set shiftwidth=4 smarttab")
 
 vim.opt.list = false
 
 -- Borders
 vim.o.winborder = "rounded"
 
--- Line numbers
+-- Line numbers & gutter
 vim.opt.number = true
 vim.cmd("set relativenumber")
-vim.opt.numberwidth = 20 -- widen the gutter
+vim.opt.numberwidth = 4 -- Custom gutter width
+
+-- HTML autocomplete
+vim.lsp.enable("html")
 
 -- Cursor style
 vim.opt.guicursor = "n-v-c-i:block"
@@ -44,10 +49,6 @@ vim.keymap.set("n", "k", "gk")
 -- Toggle neovim terminal's normal mode
 vim.keymap.set("t", "<leader><esc>", "<C-\\><C-n>", { desc = "Terminal to Normal mode." })
 
--- Save files
---vim.keymap.set("n", "<leader>ww", ":w<CR>")
---vim.keymap.set("n", "<leader>wa", ":wa<CR>")
-
 -- Toggle zen mode
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
 
@@ -68,7 +69,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Stolen from kickstart.nvim:
 --
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = false
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false

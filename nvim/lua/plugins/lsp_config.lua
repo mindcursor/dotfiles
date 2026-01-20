@@ -23,7 +23,8 @@ return {
 					"pyright",
 					"taplo", -- toml
 					"ts_ls", -- typescript
-					"cland", -- C, C++
+					-- "cland", -- C, C++
+					"stylua",
 				},
 			})
 		end,
@@ -34,6 +35,7 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.ast_grep.setup({})
 			lspconfig.dartls.setup({})
+			lspconfig.stylua.setup({})
 			lspconfig.taplo.setup({
 				indent_tables = true,
 				indent_entries = true,
